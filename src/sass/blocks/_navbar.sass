@@ -1,0 +1,37 @@
+.navbar
+  padding-top: 7px
+  padding-bottom: 8px
+  &-block
+    display: flex
+    justify-content: space-between
+  &-logo
+    width: 155px
+  &-info
+    display: flex
+    align-items: center
+  &-address
+    &__tel
+      font-size: 20px
+      font-weight: 400
+    &__address
+      display: block
+      text-align: right
+      margin-bottom: 9px
+      font-size: 13px
+      font-weight: 400
+  &-button
+    margin-left: 30px
+
+@media (max-width: 567px)
+  .navbar
+    &-logo
+      width: 91px
+    &-address
+      display: none
+    &-button
+      font-size: 10px
+
+@media (max-width: 320px)
+  .navbar
+    padding-top: 17px
+    padding-bottom: 18px
