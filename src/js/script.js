@@ -10,3 +10,17 @@ button.addEventListener('click', function (){
 close.addEventListener('click', function () {
   modal.classList.remove('modal_active');
 });
+
+setInterval(function(){
+  modal.classList.remove('modal_active');
+}, 3000);
+
+
+// Слайдер
+$(document).ready(function () {
+  $('.portfolio-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  });
+});

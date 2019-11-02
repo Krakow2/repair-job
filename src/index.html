@@ -7,6 +7,8 @@
   <title>Ремонт квартир</title>
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
+  <!-- Слайдер -->
+  <link rel="stylesheet" href="./css/slick.css">
 </head>
 <body>
   <nav class="navbar">
@@ -84,16 +86,24 @@
     </div>
   </div>
 
+
+  <!-- Портфолио секция -->
   <div class="portfolio">
     <div class="container">
       <div class="portfolio-content">
         <strong class="title portfolio-title">Работая с 2007 года,<br>
           мы сделали более 500 ремонтов в квартирах и домах</strong>
-        <div class="portfolio-slider"></div>
+        <div class="portfolio-slider">
+          <div class="portfolio-slider__item"><img src="./img/portfolio/p1.jpg" alt="" srcset=""></div>
+          <div class="portfolio-slider__item"><img src="./img/portfolio/p2.jpg" alt="" srcset=""></div>
+          <div class="portfolio-slider__item"><img src="./img/portfolio/p3.jpg" alt="" srcset=""></div>
+        </div>
       </div>
     </div>
   </div>
 
+
+  <!-- Модальное окно -->
   <div class="modal" id="modal">
     <div class="modal-dialog">
       <button class="modal-close" id="close">&times;</button>
@@ -102,6 +112,11 @@
   </div>
 
   <script src="./js/script.js"></script>
+
+  <!-- Слайдер -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="./js/slick.min.js"></script>
 
 </body>
 </html>
