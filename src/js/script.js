@@ -16,11 +16,26 @@ setInterval(function(){
 }, 3000);
 
 
-// Слайдер
-$(document).ready(function () {
-  $('.portfolio-slider').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+$(function () {
+
+  $(window).scroll(function () {
+
+    if ($(this).scrollTop() != 0) {
+
+      $('#toTop').fadeIn();
+
+    } else {
+
+      $('#toTop').fadeOut();
+
+    }
+
   });
+
+  $('#toTop').click(function () {
+
+    $('body,html').animate({ scrollTop: 0 }, 800);
+
+  });
+
 });
