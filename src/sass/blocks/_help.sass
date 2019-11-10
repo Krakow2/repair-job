@@ -1,0 +1,39 @@
+.help
+  padding-top: 100px
+  padding-bottom: 100px
+  &-content
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &-card
+    background-color: #f7f7f7
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    overflow: hidden
+    margin-bottom: 30px
+  &-title
+    padding-top: 27px
+    font-size: 16px
+    font-weight: 400
+    line-height: 23px
+    max-width: 308px
+  &-img
+    display: block
+    margin-top: auto
+  &-bold
+    font-family: 'Museo Sans Bold'
+
+@media (max-width: 768px)
+  .help
+    &-content
+      justify-content: center
+@media (max-width: 567px)
+  .help
+    padding-top: 60px
+    padding-bottom: 77px
+    &-title
+      font-size: 12px
+      line-height: 16.83px
+      padding-left: 20px

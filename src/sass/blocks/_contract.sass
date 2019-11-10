@@ -1,0 +1,36 @@
+.contract
+  padding-top: 43px
+  padding-bottom: 228px
+  &-content
+  &-title
+    margin-bottom: 100px
+  &-cards
+    margin-left: 50px
+    margin-right: 50px
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &-img
+    margin-bottom: 40px
+  &-text
+    font-size: 18px
+    font-weight: 400
+    line-height: 24px
+    text-align: center
+  &-card
+    margin-bottom: 44px
+@media (max-width: 768px)
+  .contract
+    &-cards
+      justify-content: center
+@media (max-width: 567px)
+  .contract
+    padding-top: 0
+    padding-bottom: 90px
+    &-title
+      font-size: 18px
+      margin-bottom: 50px
+    &-text
+      font-size: 14px
+    &-cards
+      margin: 0
