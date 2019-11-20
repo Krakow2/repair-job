@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./css/animate.min.css">
   <!-- <link rel="stylesheet" href="./css/slick-theme.css"> -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 </head>
 <body>
   <nav class="navbar wow slideInDown">
@@ -75,9 +76,11 @@
           и реализуем его!</strong>
         <div class="subtitle about-subtitle">Оставьте заявку на разработку
           бесплатного дизайн-проекта!</div>
-        <form action="" class="form about-form">
-            <input type="text" class="input about-input" placeholder="Ваше имя">
-            <input type="tel" class="input about-input" placeholder="Ваш телефон">
+        <form action="" class="form about-form" id="about-form">
+          <div class="about__input">
+            <input type="text" class="input about-input" required placeholder="Ваше имя">
+            <input type="tel" class="input about-input phone" required placeholder="Ваш телефон">
+          </div>
           <button class="button about-button" id="button">Получить бесплатный дизайн-проект</button> <!-- /.button about-button -->
         </form>
         <!-- /.form about-form -->
@@ -279,6 +282,81 @@
     </div>
   </div>
 
+  <div class="brif">
+    <div class="container">
+      <div class="brif-content">
+        <div class="brif-left">
+          <div class="brif-title title">Мы можем озвучить Вам примерную стоимость
+            работы и материалов по телефону</div>
+          <div class="brif-subtitle">Для этого нужно ответить на 4 вопроса:</div>
+          <ul class="brif-list">
+            <li class="brif-list__item">
+              <div class="brif-list__counter">1</div>
+              <div class="brif-list__text">Какова площадь помещения?</div>
+            </li>
+            <li class="brif-list__item">
+              <div class="brif-list__counter">2</div>
+              <div class="brif-list__text">У Вас новостройка или вторичное жилье?</div>
+            </li>
+            <li class="brif-list__item">
+              <div class="brif-list__counter">3</div>
+              <div class="brif-list__text">Где находится помещение, в котором будет
+                производиться ремонт?</div>
+            </li>
+            <li class="brif-list__item">
+              <div class="brif-list__counter">4</div>
+              <div class="brif-list__text">Назначение помещения?</div>
+            </li>
+          </ul>
+        </div>
+        <div class="brif-right">
+          <div class="brif-form__title title">Оставьте заявку на бесплатный <br>
+            расчет ремонта по телефону</div>
+          <div class="brif-form__subtitle subtitle">Для этого заполните форму ниже</div>
+          <form action="" class="brif-form" id="brif-form">
+            <input type="text" name="username" minlength="2" maxlength="15" class="input brif-input" placeholder="Ваше имя">
+            <input type="tel" name="phone" class="input brif-input phone" placeholder="Ваш телефон">
+            <input type="mail" name="email" class="input brif-input" placeholder="Ваш e-mail">
+            <button class="brif-button">Рассчитать стоимость</button>
+          </form>
+          <div class="brif-right__footer">Мы перезвоним Вам в течение 60 секунд</div>
+        </div>
+        <!-- /.brif-form -->
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4611f7a871b9f11c2bc2a47ac9110d877e6911f7153e020bd34a0d9104c65c7f&amp;width=100%25&amp;height=640&amp;lang=ru_RU&amp;scroll=false"></script></div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <div class="footer-title title">Приезжайте к нам в гости! <br>
+            Проконсультируем Вас <br>
+            по всем вопросам ремонта</div>
+          <ul class="footer-list">
+            <li class="footer-list__item">
+              <div class="footer-list-img"><img src="./img/footer/placeholder.svg" alt="" srcset="" class="footer-list__img"></div>
+              <div class="footer-list-text">г. Москва <br>
+                <strong class="footer-list-str">ул. Ленинга, д. 10, <br>
+                  корпус 2, оф. 308</strong></div>
+            </li>
+            <li class="footer-list__item">
+              <div class="footer-list-img"><img src="./img/footer/clock.svg" alt="" srcset="" class="footer-list__img"></div>
+              <div class="footer-list-text">Режим работы: <br>
+               <strong>с 9:00 до 18:00</strong></div>
+            </li>
+            <li class="footer-list__item">
+              <div class="footer-list-img"><img src="./img/footer/phone.svg" alt="" srcset="" class="footer-list__img"></div>
+              <div class="footer-list-text">Телефон: <br>
+               <strong> <a href="tel:+ 74954225131">+ 7 (495) 42-251-31</a> </strong></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Кнопка наверх -->
 
@@ -303,6 +381,40 @@
   <!-- // Слайдер -->
   <script>
     $(document).ready(function () {
+
+      //  Валидация формы
+      $('#about-form').validate({
+
+      }),
+      $('#brif-form').validate({
+        errorClass: "invalid",
+        rules: {
+          username: "required",
+          email:{
+            required: true,
+            email: true
+          },
+          phone: "required",
+        },
+        messages: {
+          username:{
+            required: "Введите ваше имя",
+            minlength: jQuery.validator.format("Осталось символов: {0}")
+          },
+          email: "Введите корректный e-mail",
+          phone: {
+            required: "Введите ваш телефон",
+            minlength: jQuery.validator.format("Осталось символов: {0}")
+          },
+        }
+      });
+
+      // Маска для телефона
+
+      $('.phone').mask('+7 (999) 999-99-99')
+
+      // Слайдер
+
       $('.portfolio-slider').slick({
         arrows: true,
         slidesToShow: 3,
@@ -339,5 +451,7 @@
   <script>
     new WOW().init();
   </script>
+  <script src="./js/jquery.validate.min.js"></script>
+  <script src="./js/jquery.maskedinput.min.js"></script>
 </body>
 </html>
