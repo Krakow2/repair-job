@@ -14,21 +14,3 @@ close.addEventListener('click', function () {
 setInterval(function(){
   modal.classList.remove('modal_active');
 }, 3000);
-
-
-$(function () {
-
-  $(window).scroll(function () {
-
-    if ($(this).scrollTop() != 0) {
-
-      $('#toTop').fadeIn();
-
-    } else {
-
-      $('#toTop').fadeOut();
-
-    }
-
-  });
-});
