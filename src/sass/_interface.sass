@@ -56,7 +56,25 @@ input
   padding-top: 7px
   border: 1px solid #000
   cursor: pointer
+#email-error
+  border: 0
+#phone-error
+  border: 0
+#username-error
+  border: 0
+.error
+  border: 1px solid red
+#aboutUsername-error
+  border: none
+  font-weight: 600
+#aboutPhone-error
+  z-index: -2
 label
+  position: absolute
+  left: 45px
+  bottom: 32%
+  display: block
+em
   text-align: center
   font-weight: 600
   border: none
@@ -67,13 +85,21 @@ label
 @media (max-width: 1200px)
   .container
     width: 768px
-
+  #aboutUsername-error
+    bottom: 46%
+    left: 23%
 @media (max-width: 768px)
   .container
     width: 567px
+  #aboutUsername-error
+    bottom: 49%
+    left: 37%
 @media (max-width: 567px)
   .container
     width: 320px
+  #aboutUsername-error
+    left: 28%
+    bottom: 56%
   button
     padding: 15px 25px
   #toTop
@@ -82,3 +108,6 @@ label
 @media (max-width: 320px)
   .container
     width: 272px
+  #aboutUsername-error
+    bottom: 56%
+    left: 23%

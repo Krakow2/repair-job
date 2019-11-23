@@ -78,8 +78,8 @@
           бесплатного дизайн-проекта!</div>
         <form action="" class="form about-form" id="about-form">
           <div class="about__input">
-            <input type="text" class="input about-input" required placeholder="Ваше имя">
-            <input type="tel" class="input about-input phone" required placeholder="Ваш телефон">
+            <input type="text" class="input about-input about-name" name="aboutUsername" placeholder="Ваше имя">
+            <input type="tel" class="input about-input phone" name="aboutPhone" placeholder="Ваш телефон">
           </div>
           <button class="button about-button" id="button">Получить бесплатный дизайн-проект</button> <!-- /.button about-button -->
         </form>
@@ -238,7 +238,7 @@
           <img src="./img/help/1.png" alt="" srcset="" class="help-img">
         </div>
         <div class="help-card">
-          <div class="help-title">Мы дадим Вам <strong class="help-bold"> максимальные скидки</strong><br>
+          <div class="help-title help-title__pos">Мы дадим Вам <strong class="help-bold"> максимальные скидки</strong><br>
             у наших партнеров для закупки <br> материалов оптом</div>
           <img src="./img/help/2.png" alt="" srcset="" class="help-img">
         </div>
@@ -384,10 +384,22 @@
 
       //  Валидация формы
       $('#about-form').validate({
-
+        rules: {
+          aboutUsername: "required",
+          aboutPhone: "required"
+        },
+        messages: {
+          aboutPhone: {
+            required: ""
+          },
+          aboutUsername: {
+            required: "Заполните поля"
+          },
+        }
       }),
       $('#brif-form').validate({
         errorClass: "invalid",
+        errorElement: "em",
         rules: {
           username: "required",
           email:{
