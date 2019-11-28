@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,UAAU,CAAV,WAAU,CACR,IAAI,CACF,SAAS,CAAE,wBAAwB,CACnC,UAAU,CAAE,OAAO,CAGrB,EAAE,CACA,SAAS,CAAE,oBAAoB,EAInC,AAAA,YAAY,AAAC,CACX,cAAc,CAAE,WAAW,CAC5B",
+    "sources": [
+        "../sass/animate/slideInDown.scss"
+    ],
+    "names": [],
+    "file": "slideInDown.css"
+}
