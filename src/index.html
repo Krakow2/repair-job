@@ -328,7 +328,8 @@
   </div>
 
   <div class="footer">
-      <div class="footer-map"><script charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4611f7a871b9f11c2bc2a47ac9110d877e6911f7153e020bd34a0d9104c65c7f&amp;width=100%25&amp;height=640&amp;lang=ru_RU&amp;scroll=false"></script></div>
+      <div class="map footer-map container-fluid" id="map_container">
+        <script id="ymap_lazy" data-skip-moving="true" charset="utf-8" async="" data-src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4611f7a871b9f11c2bc2a47ac9110d877e6911f7153e020bd34a0d9104c65c7f&amp;width=100%25&amp;height=640&amp;lang=ru_RU&amp;scroll=false"></script></div>
     <div class="container">
       <div class="footer-content">
         <div class="footer-text">
@@ -383,6 +384,29 @@
   <!-- // Слайдер -->
   <script>
     $(document).ready(function () {
+
+        let map_container = document.getElementById('map_container');
+        let options_map = {
+          once: true, //once start, thereafter destroy listener
+          passive: true,
+          capture: true
+        };
+        map_container.addEventListener('click', start_lazy_map, options_map);
+        map_container.addEventListener('mouseover', start_lazy_map, options_map);
+        map_container.addEventListener('touchstart', start_lazy_map, options_map);
+        map_container.addEventListener('touchmove', start_lazy_map, options_map);
+        let map_loaded = false;
+
+        function start_lazy_map() {
+          if (!map_loaded) {
+            let map_block = document.getElementById('ymap_lazy');
+            map_loaded = true;
+            map_block.setAttribute('src', map_block.getAttribute('data-src'));
+            map_block.removeAttribute('data_src');
+            console.log('YMAP LOADED');
+          }
+        }
+
       //  Валидация формы
       $('#about-form').validate({
         rules: {
